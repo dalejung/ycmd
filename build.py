@@ -127,7 +127,7 @@ def CustomPythonCmakeArgs():
   print( 'Searching for python libraries...' )
 
   python_prefix = CheckOutput( [
-    'python-config',
+    'python3-config',
     '--prefix'
   ] ).strip().decode( 'utf8' )
 
@@ -137,7 +137,7 @@ def CustomPythonCmakeArgs():
     print( 'Using OSX-style libs from {0}'.format( python_prefix ) )
   else:
     major_minor = CheckOutput( [
-      'python',
+      'python3',
       '-c',
       'import sys;i=sys.version_info;print( "%d.%d" % (i[0], i[1]) )'
     ] ).strip().decode( 'utf8' )
